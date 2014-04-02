@@ -16,7 +16,8 @@ gem "anjlab-bootstrap-rails", "~> 3.0.0.3", require: "bootstrap-rails"
 gem "nprogress-rails"
 
 group :test, :development do
-  gem "rspec-rails", "~>3.0.0.beta"
+  gem "rspec", "~> 3.0.0.beta2"
+  gem "rspec-rails"
 
   gem "guard"
   gem "guard-rspec"

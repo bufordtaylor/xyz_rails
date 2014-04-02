@@ -1,0 +1,25 @@
+development:
+  encoding: utf8
+  adapter: postgresql
+  database: xyz_dev
+  host: localhost
+  username: christophe
+  prepared_statements: false
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  encoding: utf8
+  adapter: postgresql
+  database: xyz_test
+  host: localhost
+  username: christophe
+  prepared_statements: false
+
+production:
+  encoding: utf8
+  adapter: postgresql
+  database: xyz_prod
+  host: localhost
+  username: christophe
