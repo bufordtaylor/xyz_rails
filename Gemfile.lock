@@ -118,6 +118,10 @@ GEM
       rack
       rake (>= 0.8.1)
     pg (0.17.1)
+    pg_search (0.7.3)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     polyglot (0.3.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -232,6 +236,7 @@ DEPENDENCIES
   nprogress-rails
   passenger
   pg
+  pg_search
   rails (= 4.0.4)
   rb-fchange
   rb-fsevent

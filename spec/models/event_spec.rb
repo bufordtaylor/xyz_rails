@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Event do
 
   describe "listing neighboring events" do
-    before :all do
+    before do
       @event_london = create(:event, :in_london, available: true)
       @event_paris = create(:event, :in_paris, available: false)
       @event_berlin = create(:event, :in_berlin, available: true)
@@ -23,4 +23,17 @@ describe Event do
       expect(@event_london.nearbys(1000).available.to_a).to eql([@event_berlin])
     end
   end
+
+  describe "searchability" do
+    before do
+      @event_london = create(:event, :in_london)
+      @event_berlin = create(:event, :in_berlin)
+    end
+
+    it "should match partial names" do
+      expect(Event.search_by_name("lon").to_a).to eql([@event_london])
+      expect(Event.search_by_name("ber").to_a).to eql([@event_berlin])
+    end
+  end
+
 end

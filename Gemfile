@@ -15,6 +15,7 @@ gem "passenger"
 gem "anjlab-bootstrap-rails", "~> 3.0.0.3", require: "bootstrap-rails"
 gem "nprogress-rails"
 gem "geocoder"
+gem "pg_search"
 
 group :test, :development do
   gem "rspec", "~> 3.0.0.beta2"

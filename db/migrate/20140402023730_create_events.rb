@@ -12,6 +12,6 @@ class CreateEvents < ActiveRecord::Migration
     end
 
     add_index :events, :name, name: "events_idx_name"
-    add_index :events, [:latitude, :longitude, :available], name: "events_idx_latitude_longitude_available"
+    add_index :events, [:latitude, :longitude, :available, :category], name: "events_idx_latitude_longitude_available_category"
   end
 end
