@@ -1,4 +1,10 @@
 XyzRails::Application.routes.draw do
+
+  scope path: "api/v1", module: "api/v1" do
+    match "events/search" => "events#search", via: [:get, :options], as: nil
+    match "events/show" => "events#show", via: [:get, :options], as: nil
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

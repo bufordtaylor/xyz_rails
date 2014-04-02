@@ -9,6 +9,13 @@ FactoryGirl.define do
       longitude -0.1333
     end
 
+    trait :in_croydon do
+      name "In Croydon"
+      # coords of croydon
+      latitude 51.3727
+      longitude -0.1099
+    end
+
     trait :in_paris do
       name "In Paris"
       # coords of eiffel tower
