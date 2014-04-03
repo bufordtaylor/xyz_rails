@@ -1,0 +1,39 @@
+- content_for(:page_title){ "Events" }
+
+%h2 Events
+
+%p
+  = link_to "New event", new_admin_event_path, class: "btn btn-primary"
+
+.alert.alert-warning
+  %p
+    %strong Test the API!
+
+  %ul
+    %li= link_to("/api/v1/events/search?q=tec", "/api/v1/events/search?q=tec")
+    %li= link_to("/api/v1/events/search?q=goo", "/api/v1/events/search?q=goo")
+    %li= link_to("/api/v1/events/show?id=4", "/api/v1/events/show?id=4")
+
+%table.events.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th.id ID
+      %th Name
+      %th Category
+      %th Coords
+  %tbody
+    - if @events.present?
+      - @events.each do |event|
+        %tr{class: "#{'unavailable' unless event.available?}"}
+          %td
+            = event.id
+          %td
+            = link_to event.name, edit_admin_event_path(event)
+          %td
+            = event.category
+          %td
+            = link_to("#{event.latitude}, #{event.longitude}", "https://www.google.com/search?q=#{event.latitude}, #{event.longitude}") 
+    - else
+      %tr
+        %td{data: {"autoset-colspan" => true}}
+          No events to list.

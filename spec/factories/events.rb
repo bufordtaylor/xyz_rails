@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :event do
     name "Event name"
+    category "foo"
 
     trait :in_london do
       name "In London"

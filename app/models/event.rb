@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   include PgSearch
 
-  validates_presence_of :name, :latitude, :longitude
+  validates_presence_of :name, :category, :latitude, :longitude
 
   scope :available, -> { where(available: true) }
 

@@ -1,0 +1,9 @@
+- content_for(:page_title){ "New event" }
+
+%h2 New event
+
+= form_for @event, url: admin_events_path do |f|
+  = render "shared/error_messages", target: @event
+  = render "form", f: f
+
+  = submit_tag "Create", class: "btn btn-primary"

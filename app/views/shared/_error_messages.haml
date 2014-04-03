@@ -1,0 +1,21 @@
+- if target.errors.any?
+  .alert.alert-danger.error-messages
+    - if defined?(heading) and heading.present?
+      %h4
+        = heading
+    - elsif !defined?(heading)
+      %h4
+        - error_message = target.errors.count == 1 ? "An error" : "#{target.errors.count} errors"
+        - error_message << " prohibited this #{target.class.model_name.human.downcase} from being"
+        - error_message << (params[:action] == "create" ? " created" : " saved")
+        = error_message
+
+    - errors_messages = target.errors.full_messages
+    - if errors_messages.count == 1
+      %p
+        = errors_messages.first
+    - else
+      %ul
+        - errors_messages.each do |message|
+          %li
+            = message

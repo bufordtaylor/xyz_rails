@@ -1,0 +1,21 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{charset: "utf-8"}
+    %meta{name: "viewport", content: "width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"}
+    %link{rel: "shortcut icon", href: asset_path("favicon.ico")}
+
+    %title= page_title("Admin XYZ", yield(:page_title))
+
+    = stylesheet_link_tag "admin/all", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "admin/all", "data-turbolinks-track" => true, "data-turbolinks-eval" => false
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-default
+      %ul.nav.navbar-nav
+        %li{class: "#{'active' if admin_events_path.ends_with?(params[:controller])}"}
+          = link_to "Events", admin_events_path
+
+    #main
+      = show_flashes
+      = yield

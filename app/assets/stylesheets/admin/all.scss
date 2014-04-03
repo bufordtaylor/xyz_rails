@@ -1,0 +1,31 @@
+/*
+ *= require twitter/bootstrap
+ *= require nprogress
+ *= require nprogress-bootstrap
+ *= require_self
+*/
+
+@charset "UTF-8";
+
+#main {
+  width: 100%;
+  clear: both;
+  padding: 0 10px;
+}
+
+table tr.unavailable td {
+  background: pink !important
+}
+
+a.delete {
+  color: red;
+}
+
+ul.jumper {
+  li {
+    margin: 10px 0;
+    input[type=text] {
+      width: 300px;
+    }
+  }
+}
