@@ -16,11 +16,11 @@ gem "anjlab-bootstrap-rails", "~> 3.0.0.3", require: "bootstrap-rails"
 gem "nprogress-rails"
 gem "geocoder"
 gem "pg_search"
+gem "database_cleaner"
 
 group :test, :development do
   gem "rspec", "~> 3.0.0.beta2"
   gem "rspec-rails", "~> 3.0.0.beta"
-  gem "database_cleaner"
   gem "factory_girl_rails", "~> 4.0"
 
   gem "guard"

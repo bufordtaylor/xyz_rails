@@ -8,6 +8,7 @@ For the sake of simplicity:
   - No pagination of events
   - No real API error management
   - No redis caching
+  - No staging or production git branches
   - Radius of 20km for similar events is hardcoded
 
 ## INSTALL
